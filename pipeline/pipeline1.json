@@ -3,8 +3,8 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy data1",
-				"type": "Copy",
+				"name": "testPipeline",
+				"type": "SqlServerStoredProcedure",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "7.00:00:00",
@@ -15,52 +15,18 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"source": {
-						"type": "AzureSqlSource",
-						"queryTimeout": "02:00:00",
-						"partitionOption": "None"
-					},
-					"sink": {
-						"type": "AzureSqlSink"
-					},
-					"enableStaging": false,
-					"translator": {
-						"type": "TabularTranslator",
-						"mappings": [
-							{
-								"source": {
-									"name": "fieldA"
-								},
-								"sink": {
-									"name": "dfsfsdf"
-								}
-							}
-						],
-						"typeConversion": true,
-						"typeConversionSettings": {
-							"allowDataTruncation": true,
-							"treatBooleanAsNumber": false
+					"storedProcedureName": "[dbo].[testPipeline]",
+					"storedProcedureParameters": {
+						"jhfgh": {
+							"value": "\"ssss\"",
+							"type": "String"
 						}
 					}
 				},
-				"inputs": [
-					{
-						"referenceName": "SourceDataset_1to",
-						"type": "DatasetReference",
-						"parameters": {
-							"tablename": "tbltest1"
-						}
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "SourceDataset_1to",
-						"type": "DatasetReference",
-						"parameters": {
-							"tablename": "tbltest1"
-						}
-					}
-				]
+				"linkedServiceName": {
+					"referenceName": "AzureSqlSoda9DB",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
 		"annotations": []
