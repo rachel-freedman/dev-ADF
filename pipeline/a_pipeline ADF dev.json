@@ -1,5 +1,5 @@
 {
-	"name": "pipeline ADF dev",
+	"name": "a_pipeline ADF dev",
 	"properties": {
 		"activities": [
 			{
