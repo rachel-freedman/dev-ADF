@@ -1,0 +1,17 @@
+{
+	"name": "Buyers",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Oracle",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "OracleTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "APPS",
+			"table": "XXSODA_BPM_BUYERS_V"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

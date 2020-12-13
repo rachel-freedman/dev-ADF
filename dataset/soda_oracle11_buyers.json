@@ -1,0 +1,49 @@
+{
+	"name": "soda_oracle11_buyers",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlSoda9DB",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Buyer_Id",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "Creation_Date",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Last_Update_Date",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Full_Name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Email_Address",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Disable_Date",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "soda_oracle11_buyers"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

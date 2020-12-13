@@ -1,0 +1,7 @@
+{
+	"name": "SodaStreamOracleIntegration",
+	"properties": {
+		"type": "SelfHosted",
+		"description": "SodaStream Oracle Integration BPM workflows"
+	}
+}

@@ -1,0 +1,64 @@
+{
+	"name": "UpdateStatuses_SP",
+	"properties": {
+		"activities": [
+			{
+				"name": "spADF_UpdateStatus",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": true,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[spADF_UpdateStatus]",
+					"storedProcedureParameters": {
+						"counter": {
+							"value": {
+								"value": "@pipeline().parameters.counter",
+								"type": "Expression"
+							},
+							"type": "Int32"
+						},
+						"value": {
+							"value": {
+								"value": "@pipeline().parameters.value",
+								"type": "Expression"
+							},
+							"type": "Int32"
+						},
+						"workflowId": {
+							"value": {
+								"value": "@pipeline().parameters.workflowId",
+								"type": "Expression"
+							},
+							"type": "Int64"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureSqlSoda9DB",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"parameters": {
+			"workflowId": {
+				"type": "int"
+			},
+			"value": {
+				"type": "int"
+			},
+			"counter": {
+				"type": "int"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2020-12-10T09:55:45Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
